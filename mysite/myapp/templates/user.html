@@ -1,0 +1,24 @@
+{%extends 'base.html'%}
+{%block content%}
+{% if notfound1 %}
+    <h2>{{notfound1}}</h2>
+    <h2>{{notfound2}}</h2>
+
+{% else %}
+    <h1>{{username.login}}</h1>
+    <div class="card" style="width: 18rem;">
+                <img src="{{username.avatar_url}}" class="card-img-top" >
+                    <div class="card-body">
+                        <h5 class="card-title">{{username.name}}</h5>
+                        <p class="card-text">location:{{username.location}}</p>
+                        <p class="card-text">blog:{{username.blog}}</p>
+                        <p class="card-text">followers:{{username.followers}}</p>
+                        <p class="card-text">following:{{username.following}}</p>
+                        <p class="card-text">email:{{username.email}}</p>
+                        <p class="card-text">public_repos:{{username.public_repos}}</p>
+                        <a href="{{username.html_url}}" class="btn btn-primary">VISIT</a>
+                    </div>
+                </div>
+{%endif%}
+
+{%endblock%}
